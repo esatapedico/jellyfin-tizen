@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  build-yarn:
+    image: node:lts
+    volumes:
+      - .:/jellyfin-tizen:delegated
+      - ../jellyfin-web:/jellyfin-web:delegated
+    command: cd /jellyfin-web && yarn install && cd /jellyfin-tizen && yarn install
+    environment:
+      JELLYFIN_WEB_DIR: "../jellyfin-web/dist"
