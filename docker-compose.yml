@@ -6,6 +6,6 @@ services:
     volumes:
       - .:/jellyfin-tizen:delegated
       - ../jellyfin-web:/jellyfin-web:delegated
-    command: cd /jellyfin-web && yarn install && cd /jellyfin-tizen && yarn install
+    command: sh -c "cd /jellyfin-web && yarn install && cd /jellyfin-tizen && yarn install"
     environment:
       JELLYFIN_WEB_DIR: "../jellyfin-web/dist"

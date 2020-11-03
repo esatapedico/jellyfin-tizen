@@ -1,3 +1,7 @@
+.PHONY: install
+install:
+	docker-compose up
+
 .PHONY: add-cli-to-path
 add-cli-to-path:
 	grep -qxF 'export PATH=$PATH:$HOME/tizen-studio/tools/ide/bin' ~/.zshrc || echo 'export PATH=$PATH:$HOME/tizen-studio/tools/ide/bin' >> ~/.zshrc
